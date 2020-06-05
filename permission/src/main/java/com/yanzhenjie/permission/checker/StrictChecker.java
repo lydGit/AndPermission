@@ -35,6 +35,7 @@ public final class StrictChecker implements PermissionChecker {
     public boolean hasPermission(Context context, String... permissions) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) return true;
 
+
         for (String permission : permissions) {
             if (!hasPermission(context, permission)) {
                 return false;
@@ -124,8 +125,8 @@ public final class StrictChecker implements PermissionChecker {
     }
 
     private static boolean checkCamera(Context context) throws Throwable {
-        PermissionTest test = new CameraTest(context);
-        return test.test();
+//        PermissionTest test = new CameraTest(context);
+        return true;
     }
 
     private static boolean checkReadContacts(Context context) throws Throwable {
